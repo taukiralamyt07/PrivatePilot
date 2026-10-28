@@ -1,0 +1,28 @@
+{
+  "name": "private-pilot",
+  "version": "0.7.0",
+  "private": true,
+  "description": "A privacy-first Chrome browser assistant side panel powered by Gemma 4 (Phase 7: Local Personal Profile and Smart Autofill)",
+  "type": "module",
+  "scripts": {
+    "generate-icons": "node scripts/generate-icons.js",
+    "prebuild": "npm run generate-icons",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "npx -y tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "@mlc-ai/web-llm": "^0.2.86",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.280",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}

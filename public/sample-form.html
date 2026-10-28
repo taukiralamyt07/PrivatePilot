@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Registration Form - Private Pilot Test</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      padding: 32px;
+      margin: 0;
+    }
+    .form-container {
+      max-width: 540px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    h1 {
+      font-size: 20px;
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: #1e293b;
+    }
+    p.subtitle {
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 24px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #334155;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 8px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #0f172a;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+    .sensitive-box {
+      border: 1px dashed #f59e0b;
+      background-color: #fffbeb;
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .sensitive-box h3 {
+      font-size: 13px;
+      margin: 0 0 8px 0;
+      color: #b45309;
+    }
+    .sensitive-box p {
+      font-size: 12px;
+      color: #92400e;
+      margin: 0 0 12px 0;
+    }
+    button[type="submit"] {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background-color: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Sample Registration Form</h1>
+    <p class="subtitle">Use this page to safely test Private Pilot form detection and filling (Phase 6).</p>
+
+    <form id="registration-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Manual Form Submission Successful!');">
+      <!-- Standard Eligible Fields -->
+      <div class="form-group" style="display: flex; gap: 12px;">
+        <div style="flex: 1;">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" placeholder="e.g. Alex">
+        </div>
+        <div style="flex: 1;">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" placeholder="e.g. Rivera">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="e.g. Alex Rivera">
+      </div>
+
+      <div class="form-group">
+        <label for="userEmail">Email ID / E-mail Address</label>
+        <input type="email" id="userEmail" name="email" placeholder="e.g. alex@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="userPhone">Phone Number</label>
+        <input type="tel" id="userPhone" name="phone" placeholder="e.g. 555-0144">
+      </div>
+
+      <div class="form-group">
+        <label for="userAddress">Street Address</label>
+        <input type="text" id="userAddress" name="address" placeholder="e.g. 123 Main St">
+      </div>
+
+      <div class="form-group" style="display: flex; gap: 12px;">
+        <div style="flex: 1;">
+          <label for="userCity">City</label>
+          <input type="text" id="userCity" name="city" placeholder="e.g. San Francisco">
+        </div>
+        <div style="flex: 1;">
+          <label for="userState">State / Province</label>
+          <input type="text" id="userState" name="state" placeholder="e.g. CA">
+        </div>
+        <div style="flex: 1;">
+          <label for="userZip">Postal Code</label>
+          <input type="text" id="userZip" name="postalCode" placeholder="e.g. 94105">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="userCountry">Country</label>
+        <select id="userCountry" name="country" style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px;">
+          <option value="">Select country...</option>
+          <option value="US">United States</option>
+          <option value="CA">Canada</option>
+          <option value="GB">United Kingdom</option>
+          <option value="IN">India</option>
+          <option value="AU">Australia</option>
+          <option value="DE">Germany</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="userCollege">College / Organization</label>
+        <input type="text" id="userCollege" name="organization" placeholder="e.g. Stanford University">
+      </div>
+
+      <div class="form-group">
+        <label for="userCourse">Course Interested In</label>
+        <input type="text" id="userCourse" name="course" placeholder="e.g. Computer Science">
+      </div>
+
+      <!-- Ambiguous Field (Must be marked for review and left blank) -->
+      <div class="form-group" style="background-color: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 6px; padding: 10px;">
+        <label for="emergencyEmail" style="color: #64748b;">Emergency Contact Email (Ambiguous field - tests safety)</label>
+        <input type="email" id="emergencyEmail" name="emergencyEmail" placeholder="Should NOT autofill personal email">
+      </div>
+
+      <div class="form-group">
+        <label for="userMessage">Message</label>
+        <textarea id="userMessage" name="message" rows="3" placeholder="Tell us about your background or inquiry..."></textarea>
+      </div>
+
+      <!-- Sensitive Fields (Must be automatically excluded for privacy & security) -->
+      <div class="sensitive-box">
+        <h3>Protected Sensitive Fields (Safety Boundary Test)</h3>
+        <p>Private Pilot must never detect or touch these fields.</p>
+
+        <div class="form-group">
+          <label for="userPassword">Account Password</label>
+          <input type="password" id="userPassword" name="password" placeholder="••••••••">
+        </div>
+
+        <div class="form-group">
+          <label for="creditCardNumber">Credit Card Number</label>
+          <input type="text" id="creditCardNumber" name="creditCard" placeholder="•••• •••• •••• ••••">
+        </div>
+      </div>
+
+      <button type="submit" id="btnSubmit">Register Account</button>
+    </form>
+  </div>
+</body>
+</html>

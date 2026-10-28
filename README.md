@@ -174,3 +174,9 @@ This runs:
     - **Issue 1 (Overly aggressive substring check)**: `pin` matched `shipping` ("s-h-i-p-i-n-g"), and `card` matched CSS class names like Bootstrap's `.card-body`, falsely rejecting legitimate form fields at revalidation time. **Fixed** with strict word-boundary regexes (`\b`) and isolating class names from sensitive keyword checks.
     - **Issue 2 (Active-tab permission desynchronization)**: In MV3 side panels, calling `chrome.tabs.get(targetTabId)` when the tab was not active or when the side panel was focused caused `executeScript` to fail with permission errors. **Fixed** with dynamic active-tab resolution and proactive origin permission checks.
     - **Issue 3 (React/SPA state synchronization)**: Setting `.value` without updating React's internal `_valueTracker` or dispatching `blur` caused controlled React and modern SPA forms to revert or reject the injected value. **Fixed** by setting `_valueTracker` and dispatching `input`, `change`, and `blur` events.
+   
+
+
+
+
+Deployed Project Link - https://privatepilot01.netlify.app/
